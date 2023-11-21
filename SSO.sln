@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSO.API", "SSO.API\SSO.API.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SSO.IdentityServer", "SSO.IdentityServer\SSO.IdentityServer.csproj", "{46819447-ECE1-4EC9-90D1-6B2671B02E94}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSO.Console", "SSO.Console\SSO.Console.csproj", "{E0ABE417-59A7-42ED-BF84-4593C123BF1F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{46819447-ECE1-4EC9-90D1-6B2671B02E94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46819447-ECE1-4EC9-90D1-6B2671B02E94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46819447-ECE1-4EC9-90D1-6B2671B02E94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0ABE417-59A7-42ED-BF84-4593C123BF1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0ABE417-59A7-42ED-BF84-4593C123BF1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0ABE417-59A7-42ED-BF84-4593C123BF1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0ABE417-59A7-42ED-BF84-4593C123BF1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
