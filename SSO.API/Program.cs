@@ -14,6 +14,11 @@ builder.Services.AddAuthentication("Bearer").AddJwtBearer("Bearer", options =>
        ValidateAudience = false,
     };
 });
+builder.Services.AddAuthorization(c => c.AddPolicy("MyApi", policy =>
+{
+    policy.RequireAuthenticatedUser();
+    policy.RequireClaim("scope", "API1");
+}));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

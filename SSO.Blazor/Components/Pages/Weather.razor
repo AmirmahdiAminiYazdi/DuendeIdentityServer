@@ -1,6 +1,7 @@
 ﻿@page "/weather"
 @attribute [StreamRendering]
 @inject IHttpClientFactory ClientFactory
+@inject IHttpContextAccessor httpContextAccessor
 
 <PageTitle>Weather</PageTitle>
 
@@ -45,6 +46,8 @@ else
         // Simulate asynchronous loading to demonstrate streaming rendering
         //  await Task.Delay(500);
         var client = ClientFactory.CreateClient("W");
+        var accessToken = await httpContextAccessor.HttpContext.GetTokenAsync("access_token");
+        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", accessToken);
         var resultString = await client.GetStringAsync("/WeatherForecast");
         var result = JsonConvert.DeserializeObject<List<WeatherForecast>>(resultString);
 
