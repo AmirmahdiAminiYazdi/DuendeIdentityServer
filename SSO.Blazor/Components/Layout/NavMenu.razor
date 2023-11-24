@@ -1,6 +1,4 @@
-﻿@inject IHttpContextAccessor httpContextAccessor
-@using Microsoft.AspNetCore.Authentication.Cookies
-@using Microsoft.AspNetCore.Authentication.OpenIdConnect
+﻿
 <div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="">SSO.Blazor</a>
@@ -28,28 +26,11 @@
                 <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
             </NavLink>
         </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href=""  onclick="@SignOut()">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Logout
-            </NavLink>
-        </div>
+      
     </nav>
-</div>
+</div> 
 
-@code {
-    private async Task SignOut()
-    {
-        Console.WriteLine("SignOut method called");
-        try
-        {
-            var cookies = await httpContextAccessor.HttpContext.GetTokenAsync("access_token");
-            await httpContextAccessor.HttpContext.SignOutAsync("Cookies");
-            await httpContextAccessor.HttpContext.SignOutAsync("oidc");
-            Console.WriteLine("Sign-out successful");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"SignOut failed: {ex.Message}");
-        }
-    }
-}
+
+
+
+
